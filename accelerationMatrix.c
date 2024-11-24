@@ -50,7 +50,7 @@ int main() {
     accelMatrix(cars, matrix, resultAccel);
 
     for (i = 0; i < cars; i++) {
-        printf("%.2f > %.2f at %.2fkm/h = %d\n", matrix[i*3 + 0], matrix[i*3 + 1], matrix[i*3 + 2], resultAccel[i]);
+        printf("%d\n", resultAccel[i]);
     }
 
     return 0;

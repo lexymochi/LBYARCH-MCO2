@@ -1,6 +1,6 @@
-;	LBYARCH S17
-;	Arcega, Bea Alexis; Bautista, Cyrus Rylie
-;	Machine Project 2, accelerationASM.asm
+; LBYARCH S17
+;   Arcega, Bea Alexis and Bautista, Cyrus Rylie
+;   Machine Project 2, accelerationASM.asm
 ;
 ;	A car's performance is usually measured using an acceleration test
 ;	with a 1km distance. some cars are measured from a cold start (they

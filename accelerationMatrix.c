@@ -36,8 +36,8 @@ int main() {
         return 1;
     }
 
-    resultAccel = (int *)malloc(cars * 3 * sizeof(int));
-    if (matrix == NULL) {
+    resultAccel = (int *)malloc(cars * sizeof(int));
+    if (resultAccel == NULL) {
         printf("Allocating memory has failed.");
         free(matrix);
         return 1;
@@ -52,6 +52,9 @@ int main() {
     for (i = 0; i < cars; i++) {
         printf("%d\n", resultAccel[i]);
     }
+
+    free(matrix);
+    free(resultAccel);
 
     return 0;
 }

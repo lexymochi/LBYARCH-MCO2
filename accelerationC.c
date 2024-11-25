@@ -85,7 +85,7 @@ int main() {
         // stop timer
         end = clock();
         timer += (float)(end - start)/CLOCKS_PER_SEC;
-        printf("Execution time %d: %.2f ms\n", i, timer);
+        printf("Execution time %d: %.2f ms\n", i, timer*1000);
     }
 	
     printf("---------------------------------------------\n");
@@ -115,7 +115,6 @@ int main() {
 		expected = (int)( roundf((matrix[n*3 + 1]*0.277777791 - matrix[n*3 + 0]*0.277777791) / matrix[n*3 + 2]) );
         printf("%.2f %.2f %.2f \t%d (Expected: %d)\n", matrix[n*3 + 0], matrix[n*3 + 1], matrix[n*3 + 2], resultAccel[i], expected);
 	}
-	printf("This function took %.2f ms to run\n", timer*1000);
 
     return 0;
 }

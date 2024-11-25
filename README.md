@@ -2,11 +2,11 @@
 
 i.) Execution time and short analysis of the performance
 
-    10 = ave. 0ms
-    100 = ave. 0ms
-    1000 = ave. 0ms
-    10000 = ave. 0.00006667ms
-    100000 = ave. 0.002333ms
+    10 = ave. 0 ms
+    100 = ave. 0 ms
+    1000 = ave. 0 ms
+    10000 = ave. 0.00006667 ms
+    100000 = ave. 0.002333 ms
 
     
 

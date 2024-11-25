@@ -92,13 +92,13 @@ int main() {
 	int n;
 	for (i = 0; i < cars; i++) {
 		expected = (int)( roundf((matrix[i*3 + 1]*0.277777791 - matrix[i*3 + 0]*0.277777791) / matrix[i*3 + 2]) );
-		printf("%f %f %f \t%d (Expected: %d)", matrix[i*3 + 0], matrix[i*3 + 1], matrix[i*3 + 2], resultAccel[i], expected);
+		// printf("%f %f %f \t%d (Expected: %d)", matrix[i*3 + 0], matrix[i*3 + 1], matrix[i*3 + 2], resultAccel[i], expected);
 		if (expected != resultAccel[i]) {
-			printf("Correctness check: Failed");
+			// printf("Correctness check: Failed");
 			wrongIndexes[wrongs] = i;
 			wrongs++;
 		}
-		printf("\n");
+		// printf("\n");
 	}
 	printf("---------------------------------------------\n");
 	printf("\n");
@@ -108,7 +108,7 @@ int main() {
 		expected = (int)( roundf((matrix[n*3 + 1]*0.277777791 - matrix[n*3 + 0]*0.277777791) / matrix[n*3 + 2]) );
         printf("%f %f %f \t%d (Expected: %d)\n", matrix[n*3 + 0], matrix[n*3 + 1], matrix[n*3 + 2], resultAccel[i], expected);
 	}
-    printf("Execution time after %d runs: %f ms\n", i, timer);
+    printf("Execution time after %d runs: %f ms\n", cars, timer);
 
     return 0;
 }

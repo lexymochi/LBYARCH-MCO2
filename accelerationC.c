@@ -100,7 +100,7 @@ int main() {
 		}
 		// printf("\n");
 	}
-	printf("---------------------------------------------\n");
+	printf("\n");
 	printf("\n");
 	printf("There are %d wrong answers.\n", wrongs);
 	for (i = 0; i < wrongs; i++) {

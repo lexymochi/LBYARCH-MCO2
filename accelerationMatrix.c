@@ -53,7 +53,7 @@ int main() {
     }
 
     resultAccel = (int *)malloc(cars * 3 * sizeof(int));
-    if (matrix == NULL) {
+    if (resultAccel == NULL) {
         printf("Allocating memory has failed.");
         free(matrix);
         return 1;
@@ -92,7 +92,7 @@ int main() {
 		expected = (int)( roundf((matrix[i*3 + 1]*0.277777791 - matrix[i*3 + 0]*0.277777791) / matrix[i*3 + 2]) );
 		printf("%f > %f at %fkm/h = %d (Expected: %d)", matrix[i*3 + 0], matrix[i*3 + 1], matrix[i*3 + 2], resultAccel[i], expected);
 		if (expected != resultAccel[i]) {
-			printf(" WRONG ANSWER!");
+			printf(" The result is wrong.");
 			wrongIndexes[wrongs] = i;
 			wrongs++;
 		}

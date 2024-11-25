@@ -91,7 +91,6 @@ int main() {
     printf("---------------------------------------------\n");
     float avgTime = timer / 30;
     printf("Average execution time after 30 runs: %.2f ms\n\n", avgTime * 1000);
-    printf("Inputs:(IV, FV, T)\tOutput: (Acceleration)\n\n");
 
 	int expected;
 	int wrongs = 0;

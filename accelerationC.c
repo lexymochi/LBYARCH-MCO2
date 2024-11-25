@@ -76,13 +76,19 @@ int main() {
 	// time function
 	clock_t start, end;
 	float timer;
-	start = clock();
 
-    accelMatrix(cars, matrix, resultAccel);
+    for (i = 0; i < 30; i++) {
+        start = clock();
 
-	// stop timer
-	end = clock();
-	timer = (float)(end - start)/CLOCKS_PER_SEC;
+        accelMatrix(cars, matrix, resultAccel);
+
+        // stop timer
+        end = clock();
+        timer += (float)(end - start)/CLOCKS_PER_SEC;
+    }
+	
+    float avgTime = timer / 30;
+    printf("Average execution time after 30 runs: %f ms\n\n", avgTime * 1000);
 
 	int expected;
 	int wrongs = 0;

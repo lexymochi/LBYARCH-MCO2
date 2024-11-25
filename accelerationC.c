@@ -86,8 +86,7 @@ int main() {
         end = clock();
         timer = (float)(end - start)/CLOCKS_PER_SEC;
         printf("Execution time after %d runs: %f ms\n", i, timer);
-
-    printf("---------------------------------------------\n");
+        printf("\n");
 
 	int expected;
 	int wrongs = 0;
@@ -103,7 +102,7 @@ int main() {
 		}
 		printf("\n");
 	}
-	printf("---------------------------------------------\n");
+	printf("\n");
 	printf("\n");
 	printf("There are %d wrong answers.\n", wrongs);
 	for (i = 0; i < wrongs; i++) {

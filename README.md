@@ -8,9 +8,7 @@ i.) Execution time and short analysis of the performance
     10000 = ave. 0.00006667 ms
     100000 = ave. 0.002333 ms
 
-    
-
-
 ii.) Screenshot of the program output with the correctness check
+![download](https://github.com/user-attachments/assets/d75d546c-5d12-414c-b98b-71c7c1ab2471)
 
 

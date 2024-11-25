@@ -1,5 +1,8 @@
 # LBYARCH-MCO2
 
-i.) execution time and short analysis of the performance
+i.) Execution time and short analysis of the performance
 
-ii.) Take a screenshot of the program output with the correctness check.
+
+ii.) Screenshot of the program output with the correctness check
+
+

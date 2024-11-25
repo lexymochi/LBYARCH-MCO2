@@ -31,7 +31,7 @@ float randomFloat(int max) {
 int main() {
 	srand(time(NULL));
 	int inputType = -1;
-	printf("Input 0 for manual inputs, 1 for automatic inputs.\n");
+	printf("\nInput 0 for manual inputs, 1 for automatic inputs.\n");
 	do {
 		printf("Input type: ");
 		scanf("%d", &inputType);
@@ -77,7 +77,7 @@ int main() {
 	clock_t start, end;
 	float timer;
 
-    for (i = 0; i < 30; i++) {
+    for (i = 1; i <= 30; i++) {
         start = clock();
 
         accelMatrix(cars, matrix, resultAccel);
@@ -85,10 +85,13 @@ int main() {
         // stop timer
         end = clock();
         timer += (float)(end - start)/CLOCKS_PER_SEC;
+        printf("Execution time %d: %.2f ms\n", i, timer);
     }
 	
+    printf("---------------------------------------------\n");
     float avgTime = timer / 30;
-    printf("Average execution time after 30 runs: %f ms\n\n", avgTime * 1000);
+    printf("Average execution time after 30 runs: %.2f ms\n\n", avgTime * 1000);
+    printf("Inputs:(IV, FV, T)\tOutput: (Acceleration)\n\n");
 
 	int expected;
 	int wrongs = 0;
@@ -96,23 +99,23 @@ int main() {
 	int n;
 	for (i = 0; i < cars; i++) {
 		expected = (int)( roundf((matrix[i*3 + 1]*0.277777791 - matrix[i*3 + 0]*0.277777791) / matrix[i*3 + 2]) );
-		printf("%f > %f at %fkm/h = %d (Expected: %d)", matrix[i*3 + 0], matrix[i*3 + 1], matrix[i*3 + 2], resultAccel[i], expected);
+		printf("%.2f %.2f %.2f \t%d (Expected: %d)", matrix[i*3 + 0], matrix[i*3 + 1], matrix[i*3 + 2], resultAccel[i], expected);
 		if (expected != resultAccel[i]) {
-			printf(" WRONG ANSWER!");
+			printf("Correctness check: Failed");
 			wrongIndexes[wrongs] = i;
 			wrongs++;
 		}
 		printf("\n");
 	}
-	
+	printf("---------------------------------------------\n");
 	printf("\n");
 	printf("There are %d wrong answers.\n", wrongs);
 	for (i = 0; i < wrongs; i++) {
 		n = wrongIndexes[i];
 		expected = (int)( roundf((matrix[n*3 + 1]*0.277777791 - matrix[n*3 + 0]*0.277777791) / matrix[n*3 + 2]) );
-		printf("%f > %f at %fkm/h = %d (Expected: %d)\n", matrix[n*3 + 0], matrix[n*3 + 1], matrix[n*3 + 2], resultAccel[i], expected);
+        printf("%.2f %.2f %.2f \t%d (Expected: %d)\n", matrix[n*3 + 0], matrix[n*3 + 1], matrix[n*3 + 2], resultAccel[i], expected);
 	}
-	printf("This function took %f ms to run\n", timer*1000);
+	printf("This function took %.2f ms to run\n", timer*1000);
 
     return 0;
 }

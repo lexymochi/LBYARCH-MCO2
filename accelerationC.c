@@ -77,20 +77,17 @@ int main() {
 	clock_t start, end;
 	float timer;
 
-    for (i = 1; i <= 30; i++) {
-        start = clock();
+    start = clock();
 
+    for (i = 0; i < 30; i++) {
         accelMatrix(cars, matrix, resultAccel);
-
-        // stop timer
-        end = clock();
-        timer += (float)(end - start)/CLOCKS_PER_SEC;
-        printf("Execution time %d: %.2f ms\n", i, timer*1000);
     }
-	
+    // stop timer
+        end = clock();
+        timer = (float)(end - start)/CLOCKS_PER_SEC;
+        printf("Execution time after %d runs: %f ms\n", i, timer);
+
     printf("---------------------------------------------\n");
-    float avgTime = timer / 30;
-    printf("Average execution time after 30 runs: %.2f ms\n\n", avgTime * 1000);
 
 	int expected;
 	int wrongs = 0;
@@ -98,7 +95,7 @@ int main() {
 	int n;
 	for (i = 0; i < cars; i++) {
 		expected = (int)( roundf((matrix[i*3 + 1]*0.277777791 - matrix[i*3 + 0]*0.277777791) / matrix[i*3 + 2]) );
-		printf("%.2f %.2f %.2f \t%d (Expected: %d)", matrix[i*3 + 0], matrix[i*3 + 1], matrix[i*3 + 2], resultAccel[i], expected);
+		printf("%f %f %f \t%d (Expected: %d)", matrix[i*3 + 0], matrix[i*3 + 1], matrix[i*3 + 2], resultAccel[i], expected);
 		if (expected != resultAccel[i]) {
 			printf("Correctness check: Failed");
 			wrongIndexes[wrongs] = i;
@@ -112,7 +109,7 @@ int main() {
 	for (i = 0; i < wrongs; i++) {
 		n = wrongIndexes[i];
 		expected = (int)( roundf((matrix[n*3 + 1]*0.277777791 - matrix[n*3 + 0]*0.277777791) / matrix[n*3 + 2]) );
-        printf("%.2f %.2f %.2f \t%d (Expected: %d)\n", matrix[n*3 + 0], matrix[n*3 + 1], matrix[n*3 + 2], resultAccel[i], expected);
+        printf("%f %f %f \t%d (Expected: %d)\n", matrix[n*3 + 0], matrix[n*3 + 1], matrix[n*3 + 2], resultAccel[i], expected);
 	}
 
     return 0;

@@ -76,16 +76,13 @@ int main() {
 	// time function
 	clock_t start, end;
 	float timer;
-
     start = clock();
 
-    for (i = 0; i < 30; i++) {
-        accelMatrix(cars, matrix, resultAccel);
-    }
+    accelMatrix(cars, matrix, resultAccel);
+	
     // stop timer
-        end = clock();
-        timer = (float)(end - start)/CLOCKS_PER_SEC;
-        printf("Execution time after %d runs: %f ms\n", i, timer);
+    end = clock();
+    timer = (float)(end - start)/CLOCKS_PER_SEC;
 
     printf("---------------------------------------------\n");
 
@@ -111,6 +108,7 @@ int main() {
 		expected = (int)( roundf((matrix[n*3 + 1]*0.277777791 - matrix[n*3 + 0]*0.277777791) / matrix[n*3 + 2]) );
         printf("%f %f %f \t%d (Expected: %d)\n", matrix[n*3 + 0], matrix[n*3 + 1], matrix[n*3 + 2], resultAccel[i], expected);
 	}
+    printf("Execution time after %d runs: %f ms\n", i, timer);
 
     return 0;
 }

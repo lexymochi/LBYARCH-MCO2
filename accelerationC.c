@@ -84,7 +84,7 @@ int main() {
     end = clock();
     timer = (float)(end - start)/CLOCKS_PER_SEC;
 
-    printf("---------------------------------------------\n");
+    printf("\n");
 
 	int expected;
 	int wrongs = 0;
